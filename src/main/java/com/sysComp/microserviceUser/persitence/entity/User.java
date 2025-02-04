@@ -1,9 +1,6 @@
 package com.sysComp.microserviceUser.persitence.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
 
 @Entity
 @Table(name = "users")
@@ -35,8 +32,16 @@ public class User {
     @Column(name = "user_level")
     private Integer userLevel; // static-table levels
 
+    public User() {
+
+    }
+
     public Integer getUserID() {
         return userID;
+    }
+
+    public void setUserID(Integer userID) {
+        this.userID = userID;
     }
 
     public String getUserName() {

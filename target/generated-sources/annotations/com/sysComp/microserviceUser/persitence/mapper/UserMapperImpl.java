@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-01-26T23:28:27-0600",
+    date = "2025-02-04T10:39:43-0600",
     comments = "version: 1.6.3, compiler: javac, environment: Java 21.0.5 (Oracle Corporation)"
 )
 @Component
@@ -32,9 +32,7 @@ public class UserMapperImpl implements UserMapper {
         if ( user.getUserLevel() != null ) {
             userDto.setUserLevel( user.getUserLevel() );
         }
-        if ( user.getUserID() != null ) {
-            userDto.setUserID( user.getUserID() );
-        }
+        userDto.setUserID( user.getUserID() );
         userDto.setUserName( user.getUserName() );
         userDto.setName( user.getName() );
         userDto.setLastname( user.getLastname() );
@@ -70,6 +68,7 @@ public class UserMapperImpl implements UserMapper {
         user.setAge( userDto.getAge() );
         user.setStatus( userDto.isStatus() );
         user.setUserLevel( userDto.getUserLevel() );
+        user.setUserID( userDto.getUserID() );
         user.setUserName( userDto.getUserName() );
         user.setName( userDto.getName() );
         user.setLastname( userDto.getLastname() );

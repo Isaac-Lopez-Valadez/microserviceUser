@@ -1,7 +1,7 @@
 package com.sysComp.microserviceUser.domain;
 
 public class UserDto {
-    private int userID;
+    private Integer userID;
     private String userName;
     private String name;
     private String lastname;
@@ -12,11 +12,11 @@ public class UserDto {
     private boolean status;
     private int userLevel;
 
-    public int getUserID() {
+    public Integer getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(Integer userID) {
         this.userID = userID;
     }
 

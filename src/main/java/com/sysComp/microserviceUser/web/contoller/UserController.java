@@ -21,6 +21,11 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<?> getActiveUsers () {
+        return ResponseEntity.ok(userService.getActiveUsers());
+    }
+
     @GetMapping("/{username}")
     public ResponseEntity<UserDto> getUser(@PathVariable String username) {
         return  ResponseEntity.ok(userService.getUserByUserName(username));
@@ -29,7 +34,17 @@ public class UserController {
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody UserDto user) {
         return ResponseEntity.ok(userService.saveUser(user));
+    }
 
+    @PutMapping
+    public ResponseEntity<?> updateUser(@RequestBody UserDto user) {
+        return ResponseEntity.ok(userService.updateUser(user));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable("id") int userID) {
+        userService.deleteUser(userID);
+        return ResponseEntity.noContent().build();
     }
 
 }
